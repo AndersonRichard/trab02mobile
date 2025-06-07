@@ -6,7 +6,7 @@ import 'country_service_interface.dart';
 class CountryService implements ICountryService {
   @override
   Future<List<Country>> fetchAllCountries() async {
-    final response = await http.get(Uri.parse('https://restcountries.com/v3.1/all?$fields=name,flags,capital,region,population'));
+    final response = await http.get(Uri.parse('https://restcountries.com/v3.1/all?fields=name,flags,capital,region,population'));
 
     if (response.statusCode == 200) {
       List<dynamic> data = json.decode(response.body);
