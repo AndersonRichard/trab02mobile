@@ -17,8 +17,9 @@ class CountryTile extends StatelessWidget {
         placeholder: (context, url) => CircularProgressIndicator(),
         errorWidget: (context, url, error) => Icon(Icons.error),
       ),
-      title: Text(country.name),
+      title: Text(country.name.isNotEmpty ? country.name : 'Nome não disponível'),
       onTap: onTap,
     );
   }
 }
+  
